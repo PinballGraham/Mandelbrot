@@ -6,11 +6,35 @@
 //  Copyright (c) 2013 Graham West. All rights reserved.
 //
 
+#import <Foundation/NSData.h>
+
 #import "MyScene.h"
+#include "MandelbrotSet.h"
 
 @implementation MyScene
 
--(id)initWithSize:(CGSize)size {    
+-(id)initWithSize:(CGSize)size {
+	int setSize = 500;
+	
+	MandelbrotSet set(-4.5, -4.5, 2.5, 2.5, setSize, setSize, 255);
+	MandelbrotSet::Result output = set.Generate();
+
+#if 0
+	NSMutableData* outputData = [NSMutableData (setSize * setSize * 4)];
+
+	int pos = 0;
+
+	for (int y = 0; y < setSize; y++)
+	{
+		for (int x = 0; x < setSize; x++)
+		{
+			unsigned int val = output[y][x];
+
+			//			outputData[pos] = ;
+		}
+	}
+#endif
+
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
         
@@ -24,7 +48,7 @@
                                        CGRectGetMidY(self.frame));
         
         [self addChild:myLabel];
-    }
+	}
     return self;
 }
 
