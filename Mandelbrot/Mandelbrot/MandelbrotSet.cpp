@@ -63,9 +63,13 @@ MandelbrotSet::Result MandelbrotSet::Generate()
 	unsigned int xPos = 0;
 	unsigned int yPos = 0;
 
+	retval.resize(m_height);
+
 	for (yPos = 0; yPos < m_height; yPos++)
 	{
 		double pointImaginary = m_originImaginary + (static_cast<double>(yPos) * m_imaginaryRange / static_cast<double>(m_height));
+
+		retval[yPos].resize(m_width);
 
 		for (xPos = 0; xPos < m_width; xPos++)
 		{
