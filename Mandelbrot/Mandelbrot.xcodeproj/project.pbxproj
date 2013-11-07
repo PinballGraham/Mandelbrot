@@ -399,6 +399,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mandelbrot/Mandelbrot-Prefix.pch";
 				INFOPLIST_FILE = "Mandelbrot/Mandelbrot-Info.plist";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
@@ -414,6 +415,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mandelbrot/Mandelbrot-Prefix.pch";
 				INFOPLIST_FILE = "Mandelbrot/Mandelbrot-Info.plist";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
@@ -479,6 +481,7 @@
 				BFB8745018287EA200736957 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BFB8745118287EA200736957 /* Build configuration list for PBXNativeTarget "MandelbrotTests" */ = {
 			isa = XCConfigurationList;
@@ -487,6 +490,7 @@
 				BFB8745318287EA200736957 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
