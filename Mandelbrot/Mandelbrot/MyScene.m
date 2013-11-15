@@ -82,32 +82,6 @@ double rangeToProportion(unsigned int min, unsigned int max, unsigned int val)
 
 	int x = 0;
 	int y = 0;
-	unsigned int least = _iterations;
-	unsigned int most = 0;
-
-	// We want to use the whole colour gradiant on each image, which means we need to know the
-	// most and least iterations that will be coloured. The set itself will be black and so
-	// shouldn't affect our colour range.
-	for (y = 0; y < height; y++)
-	{
-		for (x = 0; x < height; x++)
-		{
-			unsigned int val = output[y][x];
-
-			if (val < _iterations)
-			{
-				if (val < least)
-				{
-					least = val;
-				}
-				
-				if (val > most)
-				{
-					most = val;
-				}
-			}
-		}
-	}
 
 	for (y = 0; y < height; y++)
 	{
@@ -131,7 +105,7 @@ double rangeToProportion(unsigned int min, unsigned int max, unsigned int val)
 			{
 				// Opaque going from dark blue to cyan.
 				red = 0.0f;
-				green = rangeToProportion(least, most, val);
+				green = rangeToProportion(set.fewestIterations(), set.mostIterations(), val);
 				blue = green * 0.66f + 0.33f;
 			}
 

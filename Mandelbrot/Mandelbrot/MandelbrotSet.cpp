@@ -11,7 +11,7 @@
 #include "MandelbrotSet.h"
 
 MandelbrotSet::MandelbrotSet(double originReal, double originImaginary, double endReal, double endImaginary,
-    unsigned int width, unsigned int height, unsigned int maxIterations)
+	unsigned int width, unsigned int height, unsigned int maxIterations)
 {
 	m_originReal = originReal;
 	m_originImaginary = originImaginary;
@@ -20,7 +20,9 @@ MandelbrotSet::MandelbrotSet(double originReal, double originImaginary, double e
 	m_width = width;
 	m_height = height;
 	m_maxIterations = maxIterations;
-	
+	m_fewestIterations = maxIterations;
+	m_mostIterations = 0;
+
 	if (m_width == 0)
 	{
 		m_width = 1;
@@ -83,6 +85,16 @@ MandelbrotSet::Result MandelbrotSet::Generate()
 			}
 			
 			retval[yPos][xPos] = iters;
+			
+			if (iters < m_fewestIterations)
+			{
+				m_fewestIterations = iters;
+			}
+			
+			if (iters > m_mostIterations)
+			{
+				m_mostIterations = iters;
+			}
 		}
 	}
 	

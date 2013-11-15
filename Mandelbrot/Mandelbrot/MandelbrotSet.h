@@ -27,6 +27,9 @@ public:
 
     Result Generate();
 
+	inline unsigned int fewestIterations() { return m_fewestIterations; }
+	inline unsigned int mostIterations() { return m_mostIterations; }
+
 private:
     MandelbrotSet();
 
@@ -42,6 +45,8 @@ private:
     unsigned int m_width;
     unsigned int m_height;
     unsigned int m_maxIterations;
+	unsigned int m_fewestIterations;
+	unsigned int m_mostIterations;
 };
 
 #endif /* defined(__Mandelbrot__MandelbrotSet__) */
