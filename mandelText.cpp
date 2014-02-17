@@ -56,7 +56,7 @@ void mandelbrotPlot(float xBegin, float yBegin, float width, float height,
 
 	if (!output || width <= 0.0f || height <= 0.0f || maxIterations == 0 || area == 0)
 	{
-		printf("Bad value: %0x8d %2.3f, %2.3f, %d, %d\n", output, width, height, maxIterations, area);
+		printf("Bad value: %p %2.3f, %2.3f, %d, %d\n", output, width, height, maxIterations, area);
 		return;
 	}
 
